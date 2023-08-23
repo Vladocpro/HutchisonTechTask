@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+root {
+  height: 100vh;
+  width: 100vw;
+}
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+button{cursor:pointer;text-decoration: none;-webkit-appearance: none;-moz-appearance: none;border:none;background-color: transparent}
+button::-moz-focus-inner{padding:0;border:0;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mainBlock {
+  margin: 0 auto;
+  width: clamp(320px , 100%, 1024px);
+}
+
+.dogList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px
+}
+
+.dogItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid #74729a;
+  /*#74c7b5*/
+  padding: 1px;
+  border-radius: 6px;
+}
+.dogItem__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-left: 2px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 10px 0;
+}
+.topbarInput {
+  font-size: 15px;
+  border: 1.5px solid rgb(55 65 81);
+  padding: 5px 7px;
+  border-radius: 8px;
+}
+.dogItem__actionBtns {
+  display: flex;
+  gap: 10px;
+  margin-right: 3px;
+}
+.createBtn {
+  font-size: 16px;
+  color: #000000;
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+.deleteBtn {
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.updateBtn {
+  color: #bd9900;
+  border: 1px solid #bd9900;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+
+
+/* Modal Button */
+.modalButton {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 12px 24px;
+}
+
+
+/* Modal */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+}
+
+.modalContainer {
+  max-width: 650px;
+  width: 100%;
+  max-height: calc(100vh - 5px);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.categoriesSelect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 10px;
+}
+.categoriesItem {
+  border: 1.5px solid gray;
+  padding: 2px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.categoriesItem:hover {
+  border: 1.5px solid #000000;
+}
+.categoriesTitle {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 5px;
+}
+.categoriesCompleteContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  gap: 7px
+}
+.categoriesEditBtn {
+  display: flex;
+  text-align: start;
+  align-items: center;
+  font-size: 17px;
+}
+.categoriesSaveBtn {
+  font-size: 17px;
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  padding: 3px 40px;
+  border-radius: 9px;
+}
+.categoriesInput {
+  font-size: 16px;
+  border: 1.5px solid rgb(55 65 81);
+  padding: 7px;
+  margin: 6px auto 0 auto;
+  border-radius: 8px;
+  position: relative;
+}
+.redBorder {
+  border: 1.5px solid red;
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.addSlideRightAnimation {
+  animation-name: slideRight;
+  animation-duration: 0.3s;
+}
+
+.addSlideLeftAnimation {
+  animation-name: slideLeft;
+  animation-duration: 0.3s;
+}
+
+@media screen and (max-width: 480px) {
+  .topbarInput {
+    width: 160px;
+  }
+  .mainBlock {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .modalContainer {
+    top: 50%;
+    left: 50%;
+    overflow-y: scroll;
+  }
+}
+
